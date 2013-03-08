@@ -2,8 +2,9 @@ using System;
 
 namespace Criterion
 {
+   
     /// <summary>
-    /// Ошибки преобразования типов
+    /// 
     /// </summary>
     [Serializable]
     public  class CriterionValidateException:Exception

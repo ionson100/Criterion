@@ -30,16 +30,16 @@ namespace Criterion
            int.TryParse(id, out idCore);
            if(ControlActivator.TypeHelpWriter==null)
            {
-              throw new Exception("Не назначен обьект, отвечающий за передачу информации");
+               throw new Exception("Not assigned to an object that is responsible for the transmission of information");
            }
            var sob = Activator.CreateInstance(ControlActivator.TypeHelpWriter);
            if(sob==null)
            {
-               throw new Exception("Не могу создать объект, отвечающий за передачу информации, возможно не имеет конструктора по умолчанию...");
+               throw new Exception("I can not create an object that is responsible for the transmission of information may not have a default constructor ...");
            }
            if(!(sob is ICriterionHelpWriter))
            {
-               throw new Exception("Переданый объект, не реализует интерфейс ICriterionHelpWriter ");
+               throw new Exception("объект, не реализует интерфейс ICriterionHelpWriter ");
            }
            return ((ICriterionHelpWriter) sob).GetHelpString(typecore, idCore);
        }

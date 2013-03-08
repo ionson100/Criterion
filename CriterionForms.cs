@@ -28,7 +28,7 @@ namespace Criterion
         private bool _isContinue;
         MyState _stateControl = new MyState();
         /// <summary>
-        /// Тип котрый стоит за меню выбора.
+        /// type for menu
         /// </summary>
         [Browsable(false)]
         public Type TypeCore
@@ -54,7 +54,7 @@ namespace Criterion
 
        
         /// <summary>
-        /// Путь до катринки Help
+        /// url path for image-help
         /// </summary>
         public static string ImageHelpUrl
         {
@@ -72,7 +72,7 @@ namespace Criterion
         }
 
           /// <summary>
-          /// Назначение  объекта, кторый будет отвечать за генерацию справки помощи, имеет еонструктор по умолчанию.
+        /// Function of the object that's just be responsible for the generation of the Help files, has a default constructor.
           /// </summary>
           /// <param name="writer"></param>
           public static void AddHelpWriter(ICriterionHelpWriter writer)
@@ -86,11 +86,10 @@ namespace Criterion
 
 
         /// <summary>
-        /// Валидация принимаемых значений
+        /// Validate in values
         /// </summary>
         public CriterionValidate GetValidate()
         {
-            //if(TypeCore==null) return new CriterionValidate();
             if (_criterionValidate == null)
             {
                 ControllerBase f = new CriterionHomeController();
@@ -155,20 +154,7 @@ namespace Criterion
     {
 
 
-        //public override void Initialize(IComponent component)
-        //{
-        //    var webApp = (IWebApplication)component.Site.GetService(typeof(IWebApplication));
-        //    var config = webApp.OpenWebConfiguration(true);
-        //   // config.
-        //    // config.AppSettings.Settings["maxRetries"].Value
-        //    var systemWeb = config.GetSectionGroup("system.web");
-        //    if (systemWeb != null)
-        //    {
-        //        var profileSection = (ProfileSection)systemWeb.Sections["profile"];
-        //    }
-        //    base.Initialize(component);
-        //}
-
+        
         public override string GetDesignTimeHtml()
         {
             return "CriterionForms";

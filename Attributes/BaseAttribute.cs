@@ -3,41 +3,41 @@
 namespace Criterion.Attributes
 {
     /// <summary>
-    /// Базовый атрибут абстрактный
+    /// Base attribut
     /// </summary>
      [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
     public abstract class BaseAttribute:Attribute
     {
          /// <summary>
-         /// Имя для группировки
+        /// Name of the group
          /// </summary>
         public string NameGroup { get; set; }
          /// <summary>
-         /// Индекс для сортировки в группе
+        /// Index for sorting group
          /// </summary>
         public int IndexSortable { get; set; }
          /// <summary>
-         /// Название блока
+        /// Title block
          /// </summary>
         public string DisplayName { get; set; }
          /// <summary>
-         /// Индентификатор ( уникальный) панели, если его не ставить возьмет название пропери
+        /// Identifier (unique) panel if it will not put the name of the PROPER
          /// </summary>
         public string Id { get; set; }
          /// <summary>
-         /// Индентификатор справочной записи, если вы поставите 0( ноль) картинки  помощи видно не будет
+        /// Reference identifier help record, if you put 0 (zero) means pictures will not be visible
          /// </summary>
         public int IdHelp { get; set; }
 
         internal Type TypeProperty { get; set; }
         /// <summary>
-        /// Название поля в база для автопостроения запроса
+        /// Name field in the database for query autobuilding
         /// </summary>
         public string NameColumnFomBase { get; set; }
       
     }
     /// <summary>
-    /// Атрибут для создания слайдера, по типу выбора диапазона цен
+     ///Attribute to create a slider, select the type of the as price range
     /// </summary>
     public class CriterionSliderAttribute:BaseAttribute
     {
@@ -48,23 +48,23 @@ namespace Criterion.Attributes
     }
 
     /// <summary>
-    /// Создание листа списка
+    ///Creating a sheet list
     /// </summary>
     public class CriterionListBoxAttribute : BaseAttribute
     {
         /// <summary>
-        /// Тип который будет создавать писок, должен наследовать интерфейс ICriterion
+        /// Type that will create a list, should inherit interface ICriterion
         /// </summary>
         public Type TypeGeneratorListItem { get; set; }
       
     }
     /// <summary>
-    /// Создание листа списка со множественным выбором
+    /// ListBox Attribute
     /// </summary>
     public class CriterionListBoxMultipleAttribute : BaseAttribute
     {
         /// <summary>
-        /// Тип который будет создавать cписок, должен наследовать интерфейс ICriterion
+        /// Type that will create a list, should inherit interface ICriterion
         /// </summary>
         public Type TypeGeneratorListItem { get; set; }
         /// <summary>
@@ -74,103 +74,104 @@ namespace Criterion.Attributes
 
     }
     /// <summary>
-    /// Тип который будет создавать выпадающий cписок
+    /// DropDouwnList Attribute
     /// </summary>
     public class CriterionDropDouwnAttribute : BaseAttribute
     {
         /// <summary>
-        /// Тип который будет создавать писок, должен наследовать интерфейс ICriterion
+        /// Type that will create a list, should inherit interface ICriterion
         /// </summary>
         public Type TypeGeneratorListItem { get; set; }
     }
     /// <summary>
-    /// Тип который будет создавать выпадающий cписок( по типу да нет.)
+    /// DropDouwn as bool 
     /// </summary>
     public class CriterionBoolAsDropDouwnAttribute : BaseAttribute
     {
         /// <summary>
-        /// Что показывать при верно
+        /// Display as true
         /// </summary>
         public string DisplayTextAsTrue { get; set; }
         /// <summary>
-        /// Что показывать при не верно
+        /// Display as false
         /// </summary>
         public string DisplayTextAsFalse { get; set; }
     }
     /// <summary>
-    /// Тип который будет создавать радиокнопок ( с возможностью выбора одной)
+    /// RadioButtonList
     /// </summary>
     public class CriterionRadioButtonListAttribute : BaseAttribute
     {
         /// <summary>
-        /// Тип который будет создавать писок, должен наследовать интерфейс ICriterion
+        /// Type that will create a list, should inherit interface ICriterion
         /// </summary>
         public Type TypeGeneratorListItem { get; set; }
     }
 
     /// <summary>
-    /// Тип который будет создавать cписок чеков ( с множественным выбором, должен наследовать интерфейс ICriterion
+    /// CheckBoxListList
     /// </summary>
     public class CriterionCheckBoxListListAttribute : BaseAttribute
     {
         /// <summary>
-        /// Тип который будет создавать писок, должен наследовать интерфейс ICriterion
+        /// Type that will create a list, should inherit interface ICriterion
         /// </summary>
         public Type TypeGeneratorListItem { get; set; }
     }
     /// <summary>
-    /// Создание листа списка с одним чеком
+    /// CheckBox One
     /// </summary>
     public class CriterionBoolAsCheckBoxAttribute : BaseAttribute
     {
         
     }
     /// <summary>
-    /// Создание композиции между, или равно для дат
+    /// BetweenDateTime
     /// </summary>
     public class CriterionBetweenDateTimeAttribute : BaseAttribute
     {  /// <summary>
-        /// Текст для диапазона
+        /// Text for a range of
         /// </summary>
         public string TextBetween { get; set; }
         /// <summary>
-        /// Текст для  одиночного сравнения
+        /// Text for one of
         /// </summary>
         public string TextOne { get; set; }
     }
     /// <summary>
-    /// Создание композиции между, или равно для простых типов
+    /// SimpleBettwen
     /// </summary>
     public class CriterionSimpleBettwenAttribute : BaseAttribute
     {
         /// <summary>
-        /// Текст для диапазона
+        /// Text for a range of
         /// </summary>
         public string TextBetween { get; set; }
         /// <summary>
-        /// Текст для  одиночного сравнения
+        /// Text for one of
         /// </summary>
         public string TextOne { get; set; }
     }
     /// <summary>
-    /// Создания панели управления меню
+    /// ManagerMeny
     /// </summary>
     public class CriterionManagementAttribute : BaseAttribute
     {
         /// <summary>
-        /// Использовать ли кнопу
+        /// is usage button
         /// </summary>
         public bool UsingButton { get; set; }
         /// <summary>
-        /// Текст ссылк -Очистить все
+        /// Text as ClearAll
         /// </summary>
         public string TextClearAll { get; private set; }
         /// <summary>
         /// Текст кнопки
         /// </summary>
         public string TextButton { get; set; }
+     
         /// <summary>
-        /// Менеджер меню
+        /// ctor.
         /// </summary>
         public CriterionManagementAttribute()
         {
@@ -179,24 +180,21 @@ namespace Criterion.Attributes
         }
     }
     /// <summary>
-    /// Создание самодельной пользовательской панели
+    /// Castom item
     /// </summary>
     public class CriterionCustomAttribute : BaseAttribute
     {
         /// <summary>
-        /// Тип валидации
+        /// type validate
         /// </summary>
         public ValidationType ValidationType { get; set; }
         /// <summary>
-        /// Путь к контролу ( пользовательскому)
+        /// url path for castom control
         /// </summary>
         public  string UrlCustomControl { get; set; }
     }
 
-    //public class CriterionLinkAttribute : BaseAttribute
-    //{
-
-    //}
+    
 
   
    

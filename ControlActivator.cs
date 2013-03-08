@@ -19,7 +19,7 @@ namespace Criterion
     public static class ControlActivator
     {
         /// <summary>
-        /// что ловим в запросе, строка ключь querystrung  как индентификатор типа
+        ///   key for querystrung  as typename ( default ="tabs")
         /// </summary>
         public static string TypeNameKey = "tabs";
 
@@ -27,11 +27,11 @@ namespace Criterion
 
         internal static Boolean KeyAddUrl;
         /// <summary>
-        /// Сюда заряжается путь картинки, которая будет кнопкой Help, если  путь не обозначить, картинка загрузится из ресурсов по дефолту
+        /// Path url for image - help ( default usage image from resource)
         /// </summary>
         public static string ImageHeplUrl { get; set; }
         /// <summary>
-        /// Расширение для работы с моделью
+        /// Core Method
         /// </summary>
         /// <typeparam name="TModel"></typeparam>
         /// <typeparam name="T"></typeparam>
@@ -46,7 +46,7 @@ namespace Criterion
         }
 
         /// <summary>
-        /// Контекст меню
+        /// Contex meny
         /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>
@@ -56,11 +56,11 @@ namespace Criterion
         }
 
         /// <summary>
-        /// Расширение для рабты без модели
+        /// Core Method ( not uasge model)
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="helper"></param>
-        /// <param name="type">Тип который мы хотим исследовать в качестве меню</param>
+        /// <param name="type">Type menu</param>
         /// <returns></returns>
         public static MvcHtmlString Criterion<T>(this HtmlHelper helper, T type) where T : Type
         {
@@ -69,12 +69,7 @@ namespace Criterion
                 return MvcHtmlString.Create("");
             return MvcHtmlString.Create(new RenderingCriterion<T>(helper).RenderingCore(type));
         }
-        /// <summary>
-        /// Сюда засаовываем обьект, для выдачи справочной иформации
-        ///  ( не ссыте, я срисую тип с обьекта, и он нахуй не нуже), осюдя следует, что оъект должен иметь конструктор по умолчанию,
-        /// и должен реализовывать интерфейс ICriterionHelpWriter
-        /// </summary>
-        /// <param name="writer">Объект, чей тип реализует интерфейс ICriterionHelpWriter </param>
+        
         public static void AddHelpWriter(ICriterionHelpWriter writer)
         {
             
@@ -88,22 +83,15 @@ namespace Criterion
     {
         
         private const string UrlPouter = "Criterion/{controller}/{action}/{id}";
-        // private const string UrlImageHelp = "CriterionImage/{controller}/{action}";
-
         private const string ProbelTire = "--------------";
         private const String EndDiv = "</div>";
         readonly HtmlHelper _helper;
-        //private const String Check = "$('#{0}-hiion').val($(this).val());pizdaticus();";
         private const string HideForSlider = "<input type=\"hidden\" data-core=\"1\" value=\"{1}\" name=\"{0}\" id=\"{0}-hiion\"/>";
-
-        private WebControl _webControl;
-
-        private bool _isContinue;
+        private readonly bool _isContinue;
 
         public RenderingCriterion(HtmlHelper helper, WebControl control, bool isContinue)
         {
             _helper = helper;
-            _webControl = control;
             _isContinue = isContinue;
         }
 

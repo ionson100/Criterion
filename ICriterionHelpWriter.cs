@@ -4,7 +4,7 @@ using System.Web.Mvc;
 namespace Criterion
 {
     /// <summary>
-    /// Интерфейс котрый должен реализовать тип, обьект которого будет создавать  записи для хелпов панели
+    ///Interface buyout should implement a type object which will create entries for HELP panel
     /// </summary>
     public interface ICriterionHelpWriter
     {

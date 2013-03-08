@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
@@ -18,24 +18,24 @@ namespace Criterion
        
 
         /// <summary>
-        /// Конструктор бля, без параметров
+        /// ctor.
         /// </summary>
         public CriterionValidate()
         {
         }
 
         /// <summary>
-        /// Список ощибок, при валидации частей запроса
+        /// List of errors in the validation Parts of  Request
         /// </summary>
         public readonly List<CriterionValidateException> ValidateExceptionList = new List<CriterionValidateException>();
        
         /// <summary>
-        /// Список частей запроса
+        /// Parts of the list curent Request
         /// </summary>
         public readonly List<SqlPartDescription> SqlPartDescriptionList = new List<SqlPartDescription>();
      
         /// <summary>
-        /// Получение типа по guid типа
+        /// Getting current type menu the Guid
         /// </summary>
         /// <param name="guid"></param>
         /// <returns></returns>
@@ -49,7 +49,7 @@ namespace Criterion
         }
 
         /// <summary>
-        /// Получение типа по имени
+        /// Getting current type menu the  name
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
@@ -61,7 +61,7 @@ namespace Criterion
             return null;
         }
         /// <summary>
-        /// Получение типа по полному имени
+        /// Getting current type menu the full name
         /// </summary>
         /// <param name="fullname"></param>
         /// <returns></returns>
@@ -74,7 +74,7 @@ namespace Criterion
         }
 
         /// <summary>
-        /// Валидность выполнения запроса
+        /// The validity of the query
         /// </summary>
         public bool IsValid
         {
@@ -85,7 +85,7 @@ namespace Criterion
         }
 
         /// <summary>
-        /// Список ключей значений запроса
+        /// List of key values вЂ‹вЂ‹query
         /// </summary>
         public readonly Dictionary<string,string> RequestParametrWhere=new Dictionary<string, string>(); 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Criterion
         /// </summary>
         private List<BaseAttribute> _baseAttribute=new List<BaseAttribute>();
         /// <summary>
-        /// Тип чей запрос инициализирован 
+        /// Type menu
         /// </summary>
         public Type TypeCore;
         internal static readonly Lazy<List<Type>> Listtype = new Lazy<List<Type>>(GetTypeList, LazyThreadSafetyMode.None);
@@ -215,7 +215,7 @@ namespace Criterion
                 if (res == null)
                 {
                     ValidateExceptionList.Add(
-                        new CriterionValidateException(string.Format("не могу найти в  атрибутах типа соответствие ключу{0}",
+                        new CriterionValidateException(string.Format("I can not find the attributes of the type corresponding to the key - {0}",
                                                                      key)));
                     continue;
                 }
@@ -298,7 +298,7 @@ namespace Criterion
                                 Between(par, item, parse, dd, '-');
                             }
                             break;
-                        case ValidationType.Milti:
+                        case ValidationType.Multi:
                             {
                                 MultiPart(item, parse, par, dd);
                             }
@@ -329,7 +329,7 @@ namespace Criterion
                         {
                             ValidateExceptionList.Add(
                                 new CriterionValidateException(
-                                    string.Format("ошибка преобразования - [{0}] to {1} Id={2}", vl, dd.TypeProperty.Name, dd.Id),
+                                    string.Format("conversion error - [{0}] to {1} Id={2}", vl, dd.TypeProperty.Name, dd.Id),
                                     ex));
                             error = true;
                           
@@ -403,7 +403,7 @@ namespace Criterion
                 catch (Exception ex)
                 {
                     ValidateExceptionList.Add(
-                        new CriterionValidateException(string.Format("ошибка преобразования - [{0}] to {1} Id={2}", v, dd.TypeProperty.Name, dd.Id), ex));
+                        new CriterionValidateException(string.Format("conversion error - [{0}] to {1} Id={2}", v, dd.TypeProperty.Name, dd.Id), ex));
                     error = true;
                 }
             }
@@ -441,7 +441,7 @@ namespace Criterion
             catch (Exception ex)
             {
                 ValidateExceptionList.Add(
-                    new CriterionValidateException(string.Format("ошибка преобразования - [{0}] to {1} Id={2}", item.Value, dd.TypeProperty.Name, dd.Id), ex));
+                    new CriterionValidateException(string.Format("conversion error - [{0}] to {1} Id={2}", item.Value, dd.TypeProperty.Name, dd.Id), ex));
                 return;
             }
             SqlPartDescriptionList.Add(new SqlPartDescription
@@ -481,14 +481,14 @@ namespace Criterion
                 catch (Exception ex)
                 {
                     ValidateExceptionList.Add(
-                        new CriterionValidateException(string.Format("ошибка преобразования - [{0}] to {1} Id={2}", sas1, dd.TypeProperty.Name, dd.Id), ex));
+                        new CriterionValidateException(string.Format("conversion error - [{0}] to {1} Id={2}", sas1, dd.TypeProperty.Name, dd.Id), ex));
                     error = true;
                 }
             }
             else
             {
                 ValidateExceptionList.Add(
-                    new CriterionValidateException(string.Format("ошибка преобразования - [{0}] to {1} Id={2}", sas1, dd.TypeProperty.Name, dd.Id)));
+                    new CriterionValidateException(string.Format("conversion error - [{0}] to {1} Id={2}", sas1, dd.TypeProperty.Name, dd.Id)));
                 error = true;
             }
             if (!string.IsNullOrEmpty(sas2))
@@ -500,12 +500,12 @@ namespace Criterion
                 catch (Exception ex)
                 {
                     ValidateExceptionList.Add(
-                        new CriterionValidateException(string.Format("ошибка преобразования - [{0}] to {1} Id={2}", sas2, dd.TypeProperty.Name, dd.Id), ex));
+                        new CriterionValidateException(string.Format("conversion error - [{0}] to {1} Id={2}", sas2, dd.TypeProperty.Name, dd.Id), ex));
                     error = true;
                 }
             }
             if(error)return;
-            object data = vls.Count() == 2 ? real1 : new[] { real1, real2 };
+            var data = vls.Count() == 2 ? real1 : new[] { real1, real2 };
 
             SqlPartDescriptionList.Add(new SqlPartDescription
                                            {

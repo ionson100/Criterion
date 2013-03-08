@@ -11,7 +11,7 @@ namespace Criterion
     {
 
         /// <summary>
-        /// тип на котором меню
+        /// Type menu
         /// </summary>
         /// <returns></returns>
         public Type TypeCore{get
@@ -39,7 +39,7 @@ namespace Criterion
         
 
         /// <summary>
-        /// конструктор
+        /// ctor.
         /// </summary>
         /// <param name="context"></param>
         public CriterionContext(ControllerContext context)
@@ -48,7 +48,7 @@ namespace Criterion
         }
        
         /// <summary>
-        ///  перечисление SqlPartDescription
+        /// IEnumerable  SqlPartDescription
         /// </summary>
         /// <returns></returns>
         public IEnumerable<SqlPartDescription> GetSqlPartDescriptionList{get
@@ -57,7 +57,7 @@ namespace Criterion
         }}
        
         /// <summary>
-        /// Валидность передачи параметро
+        /// Validate
         /// </summary>
         /// <returns></returns>
         public bool IsValid{get
@@ -66,7 +66,7 @@ namespace Criterion
         }}
      
         /// <summary>
-        /// список ошибоу конветации
+        /// list of conversion errors
         /// </summary>
         /// <returns></returns>
         public List<CriterionValidateException> GetAllErrorList{get
@@ -76,7 +76,7 @@ namespace Criterion
       
        
         /// <summary>
-        /// словарь парметр - запрос
+        /// Dictionary of the - query as  sql-where
         /// </summary>
         /// <returns></returns>
         public Dictionary<string,string> GetWherePartList{get
@@ -85,7 +85,7 @@ namespace Criterion
         }}
     
         /// <summary>
-        /// Поиск типа по гуиду
+        ///Type Search by Guid
         /// </summary>
         /// <param name="guid"></param>
         /// <returns></returns>
@@ -97,7 +97,7 @@ namespace Criterion
         }
 
         /// <summary>
-        /// Поиск типа по названию
+        /// Type Search by name
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
@@ -109,7 +109,7 @@ namespace Criterion
         }
    
         /// <summary>
-        /// Поиск типа по полному названию
+        /// Type Search by full name
         /// </summary>
         /// <param name="fullname"></param>
         /// <returns></returns>

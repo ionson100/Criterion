@@ -6,12 +6,12 @@ using System.Web.UI.WebControls;
 namespace Criterion
 {
    /// <summary>
-    /// Применяется для загрузки слайдера и для  IEnumerable(ListItem)
+    /// Used to load the slider and create  IEnumerable(ListItem)
    /// </summary>
    public  interface ICriterion
     {
        /// <summary>
-       /// Загрузка слайдера, по типу выбора цены
+        /// Loading slider,as select the type of price
        /// </summary>
        /// <param name="max"></param>
        /// <param name="min"></param>
@@ -19,7 +19,7 @@ namespace Criterion
        /// <param name="helper"></param>
        void GetMinMaxForSlider(out int max, out int min, string fieldName, object helper);
        /// <summary>
-       /// Создание списка ListItem, для загрузки в контролы, сдедует заметить что при применении в MVC - helper=ViewContext, а в применении WebForms он передается как HttpContext
+       /// Creating a List List Item, to load controls, it should be noted that the application, in MVC - helper=ViewContext, and in the application of it is passed as WebForms - HttpContext
        /// </summary>
        /// <param name="t"></param>
        /// <param name="helper"></param>

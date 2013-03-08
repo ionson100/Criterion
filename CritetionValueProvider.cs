@@ -14,7 +14,7 @@ namespace Criterion
         private readonly ControllerContext _context;
 
         /// <summary>
-        /// конструктор
+        /// ctor.
         /// </summary>
         /// <param name="context"></param>
         public CritetionValueProvider(ControllerContext context)

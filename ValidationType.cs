@@ -16,7 +16,7 @@
         /// <summary>
         /// 
         /// </summary>
-        Milti=2,
+        Multi=2,
         /// <summary>
         /// 
         /// </summary>

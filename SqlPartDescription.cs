@@ -16,23 +16,23 @@ namespace Criterion
         /// <summary>
         /// 
        
-        /// Тип проперти
+        /// Type property
         /// </summary>
         public Type TypePropery { get; set; }
         /// <summary>
-        /// Индентификатор атрибута
+        /// identifier attribut
         /// </summary>
         public string Id { get; set; }
         /// <summary>
-        /// не  массив ли
+        /// is Area
         /// </summary>
         public bool IsArea { get; set; }
         /// <summary>
-        /// не запрос ли между
+        /// Is Between
         /// </summary>
         public bool IsBetween { get; set; }
         /// <summary>
-        /// Примерный sql этой части c префиксом данных
+        /// template sq-where item-part
         /// </summary>
         public string TemplateSqlPart( string prefix)
         {
@@ -89,7 +89,7 @@ namespace Criterion
         }
       
         /// <summary>
-        /// Если вы сами будете строить sql , берите данные отсюла
+        /// If you are going to build sql, take data from this
         /// </summary>
         public object DataCore { get; set; }
     }
