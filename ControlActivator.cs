@@ -46,7 +46,7 @@ namespace Criterion
         }
 
         /// <summary>
-        /// Contex meny
+        /// Contex menu
         /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>

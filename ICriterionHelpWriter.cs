@@ -11,9 +11,9 @@ namespace Criterion
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="typemeny"> </param>
+        /// <param name="typemenu"> </param>
         /// <param name="idHelpPrt"></param>
         /// <returns></returns>
-        string GetHelpString(Type typemeny, int idHelpPrt);
+        string GetHelpString(Type typemenu, int idHelpPrt);
     }
 }
