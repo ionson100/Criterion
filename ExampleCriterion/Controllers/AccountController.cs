@@ -43,11 +43,10 @@ namespace ExampleCriterion.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Имя пользователя или пароль указаны неверно.");
+                    ModelState.AddModelError("", "fac.");
                 }
             }
 
-            // Появление этого сообщения означает наличие ошибки; повторное отображение формы
             return View(model);
         }
 
@@ -77,7 +76,7 @@ namespace ExampleCriterion.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Попытка зарегистрировать пользователя
+               
                 MembershipCreateStatus createStatus;
                 Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
 
@@ -92,12 +91,11 @@ namespace ExampleCriterion.Controllers
                 }
             }
 
-            // Появление этого сообщения означает наличие ошибки; повторное отображение формы
+           
             return View(model);
         }
 
-        //
-        // GET: /Account/ChangePassword
+       
 
         [Authorize]
         public ActionResult ChangePassword()
@@ -115,8 +113,7 @@ namespace ExampleCriterion.Controllers
             if (ModelState.IsValid)
             {
 
-                // При некоторых сценариях сбоя операция смены пароля ChangePassword вызывает исключение,
-                // а не возвращает значение false (ложь).
+            
                 bool changePasswordSucceeded;
                 try
                 {
@@ -134,16 +131,15 @@ namespace ExampleCriterion.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Неправильный текущий пароль или недопустимый новый пароль.");
+                    ModelState.AddModelError("", "fac.");
                 }
             }
 
-            // Появление этого сообщения означает наличие ошибки; повторное отображение формы
+         
             return View(model);
         }
 
-        //
-        // GET: /Account/ChangePasswordSuccess
+    
 
         public ActionResult ChangePasswordSuccess()
         {
@@ -153,40 +149,8 @@ namespace ExampleCriterion.Controllers
         #region Status Codes
         private static string ErrorCodeToString(MembershipCreateStatus createStatus)
         {
-            // Полный список кодов состояния см. по адресу http://go.microsoft.com/fwlink/?LinkID=177550
-            //.
-            switch (createStatus)
-            {
-                case MembershipCreateStatus.DuplicateUserName:
-                    return "Имя пользователя уже существует. Введите другое имя пользователя.";
 
-                case MembershipCreateStatus.DuplicateEmail:
-                    return "Имя пользователя для данного адреса электронной почты уже существует. Введите другой адрес электронной почты.";
-
-                case MembershipCreateStatus.InvalidPassword:
-                    return "Указан недопустимый пароль. Введите допустимое значение пароля.";
-
-                case MembershipCreateStatus.InvalidEmail:
-                    return "Указан недопустимый адрес электронной почты. Проверьте значение и повторите попытку.";
-
-                case MembershipCreateStatus.InvalidAnswer:
-                    return "Указан недопустимый ответ на вопрос для восстановления пароля. Проверьте значение и повторите попытку.";
-
-                case MembershipCreateStatus.InvalidQuestion:
-                    return "Указан недопустимый вопрос для восстановления пароля. Проверьте значение и повторите попытку.";
-
-                case MembershipCreateStatus.InvalidUserName:
-                    return "Указано недопустимое имя пользователя. Проверьте значение и повторите попытку.";
-
-                case MembershipCreateStatus.ProviderError:
-                    return "Поставщик проверки подлинности вернул ошибку. Проверьте введенное значение и повторите попытку. Если проблему устранить не удастся, обратитесь к системному администратору.";
-
-                case MembershipCreateStatus.UserRejected:
-                    return "Запрос создания пользователя был отменен. Проверьте введенное значение и повторите попытку. Если проблему устранить не удастся, обратитесь к системному администратору.";
-
-                default:
-                    return "Произошла неизвестная ошибка. Проверьте введенное значение и повторите попытку. Если проблему устранить не удастся, обратитесь к системному администратору.";
-            }
+            return null;
         }
         #endregion
     }

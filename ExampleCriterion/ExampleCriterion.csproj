@@ -97,6 +97,19 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="CriterionBase\BodyItems\Body.cs" />
+    <Compile Include="CriterionBase\BodyItems\FootwearMen.cs" />
+    <Compile Include="CriterionBase\BodyItems\ListItems.cs" />
+    <Compile Include="CriterionBase\BodyItems\Telephone.cs" />
+    <Compile Include="CriterionBase\CustomItems\TestCustom.ascx.cs">
+      <DependentUpon>TestCustom.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CriterionBase\CustomItems\TestCustom.ascx.designer.cs">
+      <DependentUpon>TestCustom.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CriterionBase\Model\TestModel.cs" />
+    <Compile Include="CriterionBase\Model\TTest.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -158,6 +171,10 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="CriterionBase\ContentCriterion\Criterion.css" />
+    <Content Include="CriterionBase\CustomItems\TestCustom.ascx" />
+    <Content Include="CriterionBase\ScriptCriterion\Criterion.js" />
+    <Content Include="CriterionBase\ScriptCriterion\JQueryCookis.js" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -198,7 +215,12 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Criterion.csproj">
+      <Project>{fbd1c671-abb8-4d1a-a86b-e471211b3d5b}</Project>
+      <Name>Criterion</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

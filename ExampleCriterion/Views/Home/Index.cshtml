@@ -1,8 +1,28 @@
-﻿@{
-    ViewBag.Title = "Домашняя страница";
+﻿@model ExampleCriterion.CriterionBase.Model.TestModel
+@using Criterion
+@{
+    ViewBag.Title = "Criterion";
 }
-
-<h2>@ViewBag.Message</h2>
-<p>
-    Для получения дополнительных сведений о ASP.NET MVC посетите веб-сайт <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-</p>
+<link href="../../CriterionBase/ContentCriterion/Criterion.css" rel="stylesheet" />
+<script src="../../CriterionBase/ScriptCriterion/Criterion.js"></script>
+<script src="../../CriterionBase/ScriptCriterion/JQueryCookis.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css">
+<script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+@using (Html.BeginForm("Index", "Home"))
+{
+    <div style="font-size: 16px; padding: 10px">@Html.DisplayTextFor(a => a.Sql)</div>
+    <div style="font-size: 16px; padding: 10px; color: coral">@Html.DisplayTextFor(a => a.Error)</div>
+    <table style="width: 100%; border: 0">
+        <tr>
+            <td style="width: 23%; vertical-align: top">@Html.CriterionFor(a => a.Type)<br/><input id="Submit1" type="submit" value="as Post" /> </td>
+            <td style="width: 77%; vertical-align: top">
+                <table style="width: 100%; border: 0">
+                    <tr>
+                        <td>@Html.ActionLink("Telephones", "Index", new { tabs = "Telephones" }) </td>
+                        <td>@Html.ActionLink("FootwearMen", "Index", new { tabs = "FootwearMen" }) </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+}
