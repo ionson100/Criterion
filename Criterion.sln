@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Criterion", "Criterion.csproj", "{FBD1C671-ABB8-4D1A-A86B-E471211B3D5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleCriterion", "..\ExampleCriterion\ExampleCriterion.csproj", "{34DE700C-6B9D-4ABD-984A-2E2124F9EA1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleCriterion", "ExampleCriterion\ExampleCriterion.csproj", "{34DE700C-6B9D-4ABD-984A-2E2124F9EA1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
