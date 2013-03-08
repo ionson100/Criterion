@@ -30,7 +30,7 @@ namespace Criterion
            int.TryParse(id, out idCore);
            if(ControlActivator.TypeHelpWriter==null)
            {
-               throw new Exception("Not assigned to an object that is responsible for the transmission of information");
+               throw new Exception("Not assigned to an object that is responsible for the transmission of information.");
            }
            var sob = Activator.CreateInstance(ControlActivator.TypeHelpWriter);
            if(sob==null)
@@ -39,7 +39,7 @@ namespace Criterion
            }
            if(!(sob is ICriterionHelpWriter))
            {
-               throw new Exception("объект, не реализует интерфейс ICriterionHelpWriter ");
+               throw new Exception("object that does not implement the ICriterionHelpWriter.");
            }
            return ((ICriterionHelpWriter) sob).GetHelpString(typecore, idCore);
        }
