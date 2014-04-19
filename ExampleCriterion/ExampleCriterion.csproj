@@ -178,6 +178,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Criterion.jpg" />
     <Content Include="CriterionBase\ContentCriterion\Criterion.css" />
     <Content Include="CriterionBase\ContentCriterion\help.png" />
     <Content Include="CriterionBase\CustomItems\TestCustom.ascx" />
